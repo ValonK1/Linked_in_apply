@@ -6,11 +6,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # LinkedIn credentials and job search parameters
-ACCOUNT_EMAIL = print(input("Enter your LinkedIn account email: "))
-ACCOUNT_PASSWORD = print(input("Enter your linkedin Password: "))
+
+ACCOUNT_EMAIL = input("Enter your LinkedIn account email: ")
+ACCOUNT_PASSWORD = input("Enter your linkedin Password: ")
 JOB_SEARCH = print(input("Enter your desired job title: "))
-LOCATION = print(input("Enter your job : "))
+LOCATION = print(input("Enter your desired location : "))
 PHONE_NUMBER =  print(input("Enter your phone number with dashes(example: 123-456-7890) "))
+
+
 
 # Initialize WebDriver with Firefox options
 firefox_options = webdriver.FirefoxOptions()
