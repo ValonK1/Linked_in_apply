@@ -76,24 +76,22 @@ except:
 wait_and_find(By.XPATH, "//button[@aria-label='Easy Apply filter.']", click=True)
 
 
+# decided to ignore below dated posted filters to make it more simply
+
 # go to the Date posted filter open it and pick past week
-try:
-    wait_and_find(By.XPATH, "//button[@aria-label='Date posted filter. Clicking this button displays all Date posted filter options.']", click=True)
-    past_week_radio = WebDriverWait(driver, 5).until(
-        EC.element_to_be_clickable((By.XPATH, "//label[@for='timePostedRange-r604800']"))
-    )
+#try:
+#    wait_and_find(By.XPATH, "//button[@aria-label='Date posted filter. Clicking this button displays all Date posted filter options.']", click=True)
+#   past_week_radio = WebDriverWait(driver, 5).until(
+#        EC.element_to_be_clickable((By.XPATH, "//label[@for='timePostedRange-r604800']"))
+#    )
         # Try to click the "Past week" radio button
-    past_week_radio.click()
+#    past_week_radio.click()
     # Try to click the button for date posted with past week filter
 
-    wait_and_find(By.XPATH, "//button[@id='ember1414' and class = rtdeco-button__text']", click=True)
+#    wait_and_find(By.XPATH, "//button[@id='ember1414' and class = rtdeco-button__text']", click=True)
     #element_1 = 
-    wait_and_find(By.XPATH, "//button[@id='ember1121' and class = artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2']", click=True)
-    wait_and_find(By.XPATH, "//button[@id='ember1183' and class = artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2']", click=True)
-
-
-except:
-    print("The 'Past week' radio button was not found or not clickable.")
+#    wait_and_find(By.XPATH, "//button[@id='ember1121' and class = artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2']", click=True)
+#    wait_and_find(By.XPATH, "//button[@id='ember1183' and class = artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2']", click=True)#    print("The 'Past week' radio button was not found or not clickable.")
 
 
 
