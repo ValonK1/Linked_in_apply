@@ -83,3 +83,5 @@ wait_and_find(By.XPATH, "//button[@aria-label='Easy Apply filter.']", click=True
 wait_and_find(By.XPATH, "//input[@aria-label='City, state, or zip code' and @type='text']", click=True, clear=True, send_keys=LOCATION, enter=True)
 
 #apply easy apply and apply for job
+
+# testing vscode
