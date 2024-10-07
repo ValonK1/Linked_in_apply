@@ -4,6 +4,10 @@ from selenium.webdriver.common.by import By
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
+#<span dir="ltr" class="job-details-jobs-unified-top-card__job-insight-view-model-secondary">
+#                                <!---->Entry level<!---->
+#                              </span>
+
 driver = webdriver.Chrome(options=chrome_options)
 def brand_new_jobs():
     time_elements = driver.find_elements(By.CSS_SELECTOR, ".tvm__text.tvm__text--low-emphasis span")#example: get all the text associated with this

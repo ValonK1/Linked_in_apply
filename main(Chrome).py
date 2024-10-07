@@ -41,6 +41,28 @@ def wait_and_find(by, value, timeout=5, click=False, send_keys=None, clear=False
         print(f"Error locating element by {by}='{value}': {e}")
         return None
 
+
+
+
+#def entry_level(by, value, timeout=5, click=False):
+#    # Get all job listings (adjust selector if needed)
+#        try:
+#            # Check if the entry level span is present
+#            entry_level_element = job.find_element(By.CSS_SELECTOR, ".//span[contains(@class, 'job-details-jobs-unified-top-card__job-insight-view-model-secondary') and contains(text(), 'entry level')]",10)
+#            
+#            if entry_level_element:
+#                # If the entry level text is found, click the apply button
+#                time.sleep(5)  # Wait for any loading or animations
+#                apply_button = driver.find_element(By.CSS_SELECTOR, ".jobs-s-apply button")
+#                apply_button.click()
+#                print("Applied to entry-level job.")
+#                return  # Exit after applying to one job
+#        except Exception as e:
+#           print(f"Error processing job: {e}")
+#            continue  # Move to the next job listing
+
+# Make sure to call the function after setting up the driver
+# apply_to_entry_level_jobs(driver)
 # Open LinkedIn login page and login
 driver.get("https://www.linkedin.com/login")
 wait_and_find(By.CSS_SELECTOR, 'button[action-type="DENY"]', timeout=4, click=True)
@@ -81,6 +103,10 @@ wait_and_find(By.XPATH, "//button[@aria-label='Easy Apply filter.']", click=True
 # select all location and set to desired location
 wait_and_find(By.XPATH, "//input[@aria-label='City, state, or zip code' and @type='text']", click=True, clear=True, send_keys=LOCATION, enter=True)
 
+# function to apply for entry level jobs
+#job_listings = driver.find_elements(By.CSS_SELECTOR, '.display-flex.job-card-container.relative.job-card-list')  # Adjust as needed
+
+#entry_level(By.CSS_SELECTOR, '.display-flex.job-card-container.relative.job-card-listjob-card-container--clickable')
 # click on the job
 time.sleep(5)
 apply_button = driver.find_element(by=By.CSS_SELECTOR, value=".jobs-s-apply button")
