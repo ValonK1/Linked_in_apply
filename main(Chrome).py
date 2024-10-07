@@ -5,8 +5,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
+from Questions import *
+from Date_posted import *
 #notes) change constant to variabl after done
 # LinkedIn credentials and job search parameters constant test
+ACCOUNT_NAME = ("Big Moe")
 ACCOUNT_EMAIL = ('big.moe.moe.moe.moe.moe@gmail.com')
 ACCOUNT_PASSWORD = ('moe12345678')
 #JOB_SEARCH = input("Enter your desired job title: ")
@@ -38,10 +41,6 @@ def wait_and_find(by, value, timeout=5, click=False, send_keys=None, clear=False
         print(f"Error locating element by {by}='{value}': {e}")
         return None
 
-#def clickable_and_click()
-
-
-
 # Open LinkedIn login page and login
 driver.get("https://www.linkedin.com/login")
 wait_and_find(By.CSS_SELECTOR, 'button[action-type="DENY"]', timeout=4, click=True)
@@ -56,7 +55,7 @@ input("Press Enter once you've completed the CAPTCHA...")
 # acces search field put in desired field and hit send in this enter
 
 try:# Wait until the search input is present and clickable
-    search_input = WebDriverWait(driver, 4).until(
+    search_input = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//input[@aria-label='Search' and @type='text']"))
     )
     # Try to click the search input
@@ -82,6 +81,11 @@ wait_and_find(By.XPATH, "//button[@aria-label='Easy Apply filter.']", click=True
 # select all location and set to desired location
 wait_and_find(By.XPATH, "//input[@aria-label='City, state, or zip code' and @type='text']", click=True, clear=True, send_keys=LOCATION, enter=True)
 
-#apply easy apply and apply for job
+# click on the job
+time.sleep(5)
+apply_button = driver.find_element(by=By.CSS_SELECTOR, value=".jobs-s-apply button")
+apply_button.click()
 
-# testing vscode
+#solve questions 1) skip contact page and resume page
+wait_and_find(By.XPATH, "//button[@aria-label='Continue to next step']", click=True)
+wait_and_find(By.XPATH, "//button[@aria-label='Continue to next step']", click=True, timeout=10)
